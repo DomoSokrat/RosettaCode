@@ -1,0 +1,25 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "nim: build current file (for debugging)",
+            "type": "process",
+            "command": "nim",
+            "args": [
+                "compile",
+                "--debugger:native",
+                "-o:${workspaceRoot}/bin/${fileBasenameNoExtension}",
+                "${relativeFile}"
+            ],
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "group": "build",
+            "problemMatcher": [
+                "$nim"
+            ]
+        }
+    ]
+}
